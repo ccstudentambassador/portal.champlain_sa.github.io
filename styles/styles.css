@@ -14,7 +14,6 @@ nav {
   max-width: 100%;
   background-color: #00aeef;
   padding: 25px;
-  list-style: none;
   display: flex;
   justify-content: space-between;
 }
@@ -25,6 +24,7 @@ nav {
 }
 
 .pages {
+  list-style: none;
   display: flex;
 }
 
@@ -67,6 +67,7 @@ span {
   justify-content: center;
   text-align: center;
   margin-top: 10px;
+  /*max-width: 50%;*/
 }
 
 i {
@@ -84,6 +85,9 @@ i {
   justify-content: center;
   flex-direction: column;
   cursor: pointer;
+}
+
+.links a {
   margin: 15px;
 }
 
@@ -95,6 +99,50 @@ i {
   -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
   box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.3);
+}
+
+.smallicon {
+  background-color: #00aeef;
+  border-radius: 5px;
+  width: 200px;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 1;
+  cursor: auto;
+  list-style: none;
+  margin: 15px;
+}
+
+.smallicon span {
+  font-size: 22px;
+  color: white;
+}
+
+.smallicon a {
+  font-size: 22px;
+  color: white;
+}
+
+
+.warningbox {
+  background-color: #EE3124;
+  border-radius: 5px;
+  height: 175px;
+  width: 700px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-flow: row wrap;
+  flex-direction: column;
+  cursor: help;
+  margin: 15px;
+}
+
+.warningbox span {
+  font-size: 22px;
+  color: white;
 }
 
 footer {
