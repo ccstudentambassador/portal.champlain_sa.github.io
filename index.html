@@ -25,7 +25,7 @@
 
       <div class="pages">
         <a href="index.html"><li>Home</li></a>
-        <a href="./pages/extensions.html"><li>Extensions</li></a>
+        <a href="#"><li>Extensions</li></a>
         <a href="#"><li>Counselor Map</li></a>
       </div>
     </nav>
@@ -116,13 +116,20 @@
       });
       window.onload = function() { init() };
 
-      var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1WcXn7_LocnbqskQxmBs0G7XzayQTgtnaWjOVrW1BSwk/pubhtml';
+      var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1VPJsWRqeBW6t7xn3JphKra1LwrmyJpstcjhJz0tTyDk/pubhtml';
 
       function init() {
         Tabletop.init( { key: public_spreadsheet_url,
                          callback: showInfo,
                          simpleSheet: true } )
       }
+
+      var monthNames = [
+        "January", "February", "March",
+        "April", "May", "June", "July",
+        "August", "September", "October",
+        "November", "December"
+      ];
 
       function showInfo(data, tabletop) {
         $(".news .items").empty();
@@ -133,8 +140,9 @@
           var i;
           for(i = data.length - 1; i >= 0; i--){
             console.log(data[i].Date);
+            var date = new Date(data[i].Timestamp);
             $(".news .items").append(
-              '<tr class="item"> <td class="date">' + data[i].Date + '</td> <td class="message">' + data[i].Message + '</td> </tr>'
+              '<tr class="item"> <td class="date">' + monthNames[date.getMonth()] + ' ' + date.getDate() + '</td> <td class="message">' + data[i].Message + '</td> </tr>'
             );
           }
         }
