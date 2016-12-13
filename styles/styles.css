@@ -55,7 +55,7 @@ nav img {
   /*filter: brightness(0) invert(1);*/
 }
 
-span {
+#logo-wrapper span, .links span, footer span {
   font-size: 45px;
   font-weight: 900;
   color: white;
