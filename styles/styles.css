@@ -18,6 +18,11 @@ nav {
   justify-content: space-between;
 }
 
+#logo-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -111,7 +116,7 @@ span {
 }
 
 .items {
-  overflow-y: scroll;
+  overflow-y: auto;
   max-height: 65vh;
 }
 
@@ -185,4 +190,36 @@ footer img {
 .btn {
   background-color: #00aeef !important;
   cursor: pointer;
+}
+
+/* Media Queries */
+
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+
+    nav {
+      justify-content: center;
+    }
+
+    .pages {
+      display: none;
+    }
+
+    .news {
+      display: none;
+    }
+
+    .links {
+      max-width: 100%;
+    }
+
+    .icon {
+      width: 94vw;
+      display: block;
+      align-items: baseline;
+      justify-content: center;
+    }
 }

@@ -12,7 +12,7 @@
   <body>
     <nav>
       <!-- <img src="logo_color.png" alt="" /> -->
-      <a href="index.html" style="display: flex; flex-flow: row wrap;">
+      <a id="logo-wrapper" href="index.html">
         <div class="logo">
           <span>STU</span>
           <img src="images/shield_color.png" alt=""/>
@@ -128,7 +128,7 @@
         if (data.length == 0){
           $(".news .items").append("<h3> No updates at this time </h3>").css("overflow-y", "hidden");
         } else {
-          $(".news .items").css("overflow-y", "scroll");
+          $(".news .items").css("overflow-y", "auto");
           var i;
           for(i = data.length - 1; i >= 0; i--){
             console.log(data[i].Date);
