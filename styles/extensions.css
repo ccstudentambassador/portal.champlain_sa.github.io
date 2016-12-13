@@ -1,0 +1,26 @@
+
+.extensionswrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.extensionsbox {
+  margin: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: white;
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.25);
+  width: 50%;
+  min-width: 400px;
+  height: 100%;
+  text-align: center;
+}
+
+h1 {
+  font-size: 24px;
+  color: #00aeef;
+  font-weight: bold;
+}
