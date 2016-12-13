@@ -203,10 +203,8 @@ footer img {
 /* Media Queries */
 
 @media only screen
-  and (min-device-width: 375px)
-  and (max-device-width: 667px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: portrait) {
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
 
     nav {
       justify-content: center;
@@ -239,21 +237,33 @@ footer img {
     .icon {
       width: 94vw;
       font-size: 30px;
-      display: inline-flex;
-      align-items: center;
-    }
-
-    .icon img {
-      display: none;
+      text-align: left;
     }
 
     .icon i {
-      display: none;
+      position: relative;
+      top: 2%;
+      margin-left: 22%;
+    }
+
+    .icon img {
+      position: relative;
+      top: 17%;
+      margin-left: 16%;
+      width: 140px;
+      height: 140px;
     }
 
     .icon span {
+      position: relative;
+      top: -20%;
       max-width: 400px;
       font-size: 45px;
+      margin-left: 45%;
+    }
+
+    #wings span, #drive span {
+      top: -40%;
     }
 
     footer {
@@ -269,6 +279,4 @@ footer img {
     #footer-background {
       display: none;
     }
-
-
 }
