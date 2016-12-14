@@ -29,6 +29,7 @@ nav {
 }
 
 .pages {
+  list-style: none;
   display: flex;
 }
 
