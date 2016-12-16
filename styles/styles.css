@@ -115,7 +115,13 @@ nav img {
   text-align: center;
 }
 
+.news h1 i {
+  color: #eee;
+  cursor: pointer;
+}
+
 .items {
+  margin-top: -30px;
   overflow-y: auto;
   max-height: 65vh;
 }
