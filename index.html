@@ -65,6 +65,7 @@
         <a href="http://bit.ly/F16SACoverage">
           <div class="icon" id="coverage">
             <i class="fa fa-clock-o fa-4x" aria-hidden="true"></i>
+            <i id="secret" class="fa fa-user-secret fa-4x" aria-hidden="true"></i>
             <span>Shift Coverage</span>
           </div>
         </a>
@@ -78,6 +79,13 @@
           <div class="icon" id="saotm">
             <i class="fa fa-user fa-4x" aria-hidden="true"></i>
             <span>SAOTM</span>
+          </div>
+        </a>
+        <a href="http://bit.ly/SATourFeedback">
+          <div class="icon" id="feedback">
+            <i class="fa fa-check-square-o fa-4x" aria-hidden="true"></i>
+            <i id="secret" class="fa fa-user-secret fa-4x" aria-hidden="true"></i>
+            <span>Tour Feedback</span>
           </div>
         </a>
       </div>
@@ -106,6 +114,10 @@
 
         // Set up incognito clicks
         $("#coverage").click(function(event) {
+          event.preventDefault();
+          incognitoShake($(this));
+        });
+        $("#feedback").click(function(event) {
           event.preventDefault();
           incognitoShake($(this));
         });
@@ -153,12 +165,13 @@
       function incognitoShake(element){
         var text = isMobile() ? "HOLD → Open In Incognito" : "RIGHT CLICK → Open In Incognito";
         var size = isMobile() ? "30px" : "";
+        var link = element.find("span").text();
         element.css("background-color", "#EE3124");
         element.find("span").css("font-size", size);
         element.addClass("animated shake");
         element.find("i").hide();
         element.find("img").hide();
-        element.prepend('<i id="secret" class="fa fa-user-secret fa-4x" aria-hidden="true"></i>');
+        element.find("#secret").show();
         element.find("span").text(text);
         setTimeout(function(){
           element.css("background-color", "#00aeef");
@@ -167,7 +180,7 @@
           element.find("i").show();
           element.find("img").show();
           element.find("#secret").hide();
-          element.find("span").text("Shift Coverage");
+          element.find("span").text(link);
         }, 5000);
       }
     </script>
