@@ -171,7 +171,7 @@
         element.addClass("animated shake");
         element.find("i").hide();
         element.find("img").hide();
-        element.find("#secret").show();
+        element.find(".secret").show();
         element.find("span").text(text);
         setTimeout(function(){
           element.css("background-color", "#00aeef");
@@ -179,7 +179,7 @@
           element.removeClass("animated shake");
           element.find("i").show();
           element.find("img").show();
-          element.find("#secret").hide();
+          element.find(".secret").hide();
           element.find("span").text(link);
         }, 5000);
       }
