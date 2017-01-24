@@ -76,6 +76,10 @@ nav img {
   border-bottom: 2px #eee solid;
 }
 
+.item:last-of-type {
+  border-bottom: none;
+}
+
 .item .date {
   text-align: left;
   color: black;
