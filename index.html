@@ -106,6 +106,7 @@
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="./assets/timeago.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.2.0/js/mdb.min.js" charset="utf-8"></script>
     <script src="./assets/tabletop.js" charset="utf-8"></script>
     <script type="text/javascript">
@@ -148,13 +149,18 @@
         } else {
           $(".news .items").css("overflow-y", "auto");
           var i;
-          for(i = data.length - 1; i >= 0; i--){
-            console.log(data[i].Date);
-            var date = new Date(data[i].Timestamp);
-            $(".news .items").append(
-              '<tr class="item"> <td class="date">' + monthNames[date.getMonth()] + ' ' + date.getDate() + '</td> <td class="message">' + data[i].Message + '</td> </tr>'
-            );
-          }
+          var today = new Date();
+          data.reverse().forEach(function(update){
+            var date = new Date(update.Timestamp);
+            var timeDiff = Math.abs(today.getTime() - date.getTime());
+            var diffDays = Math.floor(timeDiff / (1000 * 3600 * 24)) + 1;
+            if (diffDays <= 14)
+            {
+              $(".news .items").append(
+                '<tr class="item"> <td class="date">' + monthNames[date.getMonth()] + ' ' + date.getDate() + ': <br> <span style="color: #969696; font-size: 15px;"> (' + $.timeago(date.getTime()) + ') </span> ' + '</td> <td class="message">' + update.Message + '</td> </tr>'
+              );
+            }
+          });
         }
         setTimeout(function(){
           init();
