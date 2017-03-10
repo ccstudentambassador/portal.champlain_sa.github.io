@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="screen" title="no title">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="styles/styles.css" media="screen" title="no title">
+    <link rel="stylesheet" href="styles/sidebar.css" media="screen" title="no title">
   </head>
   <body>
     <nav>
       <!-- <img src="logo_color.png" alt="" /> -->
       <a id="logo-wrapper" href="index.html">
         <div class="logo">
-          <span>STU</span>
-          <img src="images/shield_color.png" alt=""/>
+          <span>STUD</span>
           <span>ENT &nbsp;</span>
         </div>
         <div class="logo">
@@ -31,97 +31,34 @@
       </div>
     </nav>
 
+    <div class="sidebar">
+      <img src="images/shield_color.png" alt=""/>
+    </div>
+
     <div class="wrapper">
-      <div class="links">
-        <a href="https://bit.ly/admprojects">
-          <div class="icon" id="tracker">
-            <i class="fa fa-tasks fa-4x" aria-hidden="true"></i>
-            <span>Project Tracker</span>
-          </div>
-        </a>
-        <a href="https://docs.google.com/spreadsheets/d/18aXXENkxWQzneaTbOADKU1DzRPhwwMNr5ecLqBWrCYQ/edit#gid=2031798795">
-          <div class="icon" id="schedule">
-            <i class="fa fa-th-list fa-4x" aria-hidden="true"></i>
-            <span>Schedule</span>
-          </div>
-        </a>
-        <a href="https://www.google.com/calendar/render?pli=1#h">
-          <div class="icon" id="calendar">
-            <i class="fa fa-calendar fa-4x" aria-hidden="true"></i>
-            <span>Calendar</span>
-          </div>
-        </a>
-        <a href="https://mail.google.com/mail/u/0/#inbox">
-          <div class="icon" id="gmail">
-            <i class="fa fa-envelope fa-4x" aria-hidden="true"></i>
-            <span>Gmail</span>
-          </div>
-        </a>
-        <a href="https://drive.google.com/drive/#my-drive">
-          <div class="icon" id="drive">
-            <img src="images/googledrive.ico" alt="">
-            <span>Google Drive</span>
-          </div>
-        </a>
-        <a href="http://bit.ly/F16SACoverage">
-          <div class="icon" id="coverage">
-            <i class="fa fa-clock-o fa-4x" aria-hidden="true"></i>
-            <i id="secret" class="fa fa-user-secret fa-4x" aria-hidden="true"></i>
-            <span>Shift Coverage</span>
-          </div>
-        </a>
-        <a href="http://bit.ly/satrainingprogress">
-          <div class="icon" id="wings">
-            <img src="images/wings.png" alt="">
-            <span>Wings Progress</span>
-          </div>
-        </a>
-        <a href="pages/saotm.html">
-          <div class="icon" id="saotm">
-            <i class="fa fa-user fa-4x" aria-hidden="true"></i>
-            <span>SAOTM</span>
-          </div>
-        </a>
-        <a href="http://bit.ly/SATourFeedback">
-          <div class="icon-update" id="feedback">
-            <i class="fa fa-check-square-o fa-4x" aria-hidden="true"></i> <br>
-            <i id="secret" class="fa fa-user-secret fa-4x" aria-hidden="true"></i>
-            <span>Tour Feedback</span>
-          </div>
-        </a>
-        <a href="https://www.champlain.edu/current-students">
-          <div class="icon-update" id="drive">
-            <img src="images/shield_white.png" alt=""> <br>
-            <span style="font-size: 18px;">Current Students</span>
-          </div>
-        </a>
-        <a href="https://my.champlain.edu/google/index/off/1/service/workday">
-          <div class="icon-update" >
-            <img src="images/workday.png" alt=""> <br>
-            <i id="secret" class="fa fa-user-secret fa-4x" aria-hidden="true" style="padding-top: 10px;"></i>
-            <span>Workday</span>
-          </div>
-        </a>
-      </div>
       <div class="news">
         <h1>Office Updates &amp; News <a href="https://goo.gl/forms/V52CgIlcoV4C9z5j1" target="_blank"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></h1>
         <div class="items"></div>
       </div>
       <!-- TODO  -->
       <!-- Workday -->
+      <div class="events-upcoming">
+        <iframe src="https://calendar.google.com/calendar/embed?src=champlain.edu_n4tc14h37mq03qj9vnhqinue90%40group.calendar.google.com&ctz=America/New_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+      </div>
     </div>
-    <footer>
+    <!-- <footer>
       <div id="champlain">
         <img src="images/shield_color.png" alt=""/>
         <span>LET US DARE</span>
       </div>
       <span id="footer-background"></span>
-    </footer>
+    </footer> -->
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="./assets/timeago.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.2.0/js/mdb.min.js" charset="utf-8"></script>
     <script src="./assets/tabletop.js" charset="utf-8"></script>
+    <script src="./assets/format-google-calendar.js" charset="utf-8"></script>
     <script type="text/javascript">
       $( document ).ready(function() {
         // Intialize Updates Board
