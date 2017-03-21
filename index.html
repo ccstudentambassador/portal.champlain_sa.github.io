@@ -18,7 +18,7 @@
       <a id="logo-wrapper" href="index.html">
         <div class="logo">
           <span>STUD</span>
-          <span>ENT &nbsp;</span>
+          <span>ENT</span>
         </div>
         <div class="logo">
           <span>AMBASSADORS</span>
@@ -34,56 +34,8 @@
 
     <div class="sidebar">
       <div class="logo">
-        <img src="images/shield_color.png" alt=""/>
+        <img src="images/champlain_logo_color.png" alt=""/>
       </div>
-      <a href="https://bit.ly/admprojects">
-        <div class="side-element">
-          <i class="fa fa-tasks" aria-hidden="true"></i>
-          <p>Project Tracker</p>
-        </div>
-      </a>
-      <a href="https://docs.google.com/spreadsheets/d/18aXXENkxWQzneaTbOADKU1DzRPhwwMNr5ecLqBWrCYQ/edit#gid=2031798795">
-        <div class="side-element">
-          <i class="fa fa-th-list" aria-hidden="true"></i>
-          <p>Schedule</p>
-        </div>
-      </a>
-      <a href="https://www.google.com/calendar/render?pli=1#h">
-        <div class="side-element">
-          <i class="fa fa-calendar" aria-hidden="true"></i>
-          <p>Calendar</p>
-        </div>
-      </a>
-      <a href="https://mail.google.com/mail/u/0/#inbox">
-        <div class="side-element">
-          <i class="fa fa-envelope" aria-hidden="true"></i>
-          <p>Gmail</p>
-        </div>
-      </a>
-      <a href="https://drive.google.com/drive/#my-drive">
-        <div class="side-element">
-          <img src="images/googledrive.ico" alt="">
-          <p>Gmail</p>
-        </div>
-      </a>
-      <a href="http://bit.ly/F16SACoverage">
-        <div class="side-element">
-          <i class="fa fa-clock-o" aria-hidden="true"></i>
-          <p>Coverage</p>
-        </div>
-      </a>
-      <a href="http://bit.ly/satrainingprogress">
-        <div class="side-element">
-          <img src="images/wings.png" alt="">
-          <p>Wings</p>
-        </div>
-      </a>
-      <!-- <a href="pages/saotm.html">
-        <div class="side-element">
-          <i class="fa fa-user" aria-hidden="true"></i>
-          <p>SAOTM</p>
-        </div>
-      </a> -->
     </div>
 
     <div class="wrapper">
@@ -154,6 +106,7 @@
 
       function showInfo(data, tabletop) {
         $(".news .items").empty();
+        console.log(data.length);
         if (data.length == 0){
           $(".news .items").append("<h3> No updates at this time </h3>").css("overflow-y", "hidden");
         } else {
@@ -171,6 +124,9 @@
               );
             }
           });
+          if ($(".news .items").length == 1){
+            $(".news .items").append("<h3> No updates at this time </h3>").css("overflow-y", "hidden");
+          }
         }
         setTimeout(function(){
           init();
