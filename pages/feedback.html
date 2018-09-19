@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="styles/styles.css" media="screen" title="no title">
   </head>
   <body>
+      <!--Navigation bar!-->
     <nav>
       <!-- <img src="logo_color.png" alt="" /> -->
       <a id="logo-wrapper" href="index.html">
@@ -65,84 +66,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.2.0/js/mdb.min.js" charset="utf-8"></script>
     <script src="./assets/tabletop.js" charset="utf-8"></script>
     <script type="text/javascript">
-      $( document ).ready(function() {
-        // Intialize Updates Board
-        init();
-        $("#secret").hide();
-        // Set up incognito clicks
-        $("#coverage").click(function(event) {
-          event.preventDefault();
-          incognitoShake($(this));
-        });
-        $("#feedback").click(function(event) {
-          event.preventDefault();
-          incognitoShake($(this));
-        });
-        $("#workday").click(function(event) {
-          event.preventDefault();
-          incognitoShake($(this));
-        });
-      });
-      var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1VPJsWRqeBW6t7xn3JphKra1LwrmyJpstcjhJz0tTyDk/pubhtml';
-      function init() {
-        Tabletop.init( { key: public_spreadsheet_url,
-                         callback: showInfo,
-                         simpleSheet: true } )
-      }
-      var monthNames = [
-        "January", "February", "March",
-        "April", "May", "June", "July",
-        "August", "September", "October",
-        "November", "December"
-      ];
-      function showInfo(data, tabletop) {
-        $(".news .items").empty();
-        if (data.length == 0){
-          $(".news .items").append("<h3> No updates at this time </h3>").css("overflow-y", "hidden");
-        } else {
-          $(".news .items").css("overflow-y", "auto");
-          var i;
-          var today = new Date();
-          data.reverse().forEach(function(update){
-            var date = new Date(update.Timestamp);
-            var timeDiff = Math.abs(today.getTime() - date.getTime());
-            var diffDays = Math.floor(timeDiff / (1000 * 3600 * 24)) + 1;
-            if (diffDays <= 14)
-            {
-              $(".news .items").append(
-                '<tr class="item"> <td class="date">' + monthNames[date.getMonth()] + ' ' + date.getDate() + ': <br> <span style="color: #969696; font-size: 15px;"> (' + $.timeago(date.getTime()) + ') </span> ' + '</td> <td class="message">' + update.Message + '</td> </tr>'
-              );
-            }
-          });
-        }
-        setTimeout(function(){
-          init();
-        }, 10000);
-      }
-      function isMobile(){
-        return ($(".news").css("display") == "none") ? true : false;
-      }
-      function incognitoShake(element){
-        var text = isMobile() ? "HOLD → Open In Incognito" : "RIGHT CLICK → Open In Incognito";
-        var size = isMobile() ? "30px" : "";
-        var link = element.find("span").text();
-        element.css("background-color", "#EE3124");
-        element.find("span").css("font-size", size);
-        element.addClass("animated shake");
-        element.find("i").hide();
-        element.find("img").hide();
-        element.find("#secret").show();
-        element.find("span").text(text);
-        setTimeout(function(){
-          element.css("background-color", "rgba(35,31,32,.9)");
-          element.find("span").css("font-size", "");
-          element.removeClass("animated shake");
-          element.find("i").show();
-          element.find("img").show();
-          element.find("#secret").hide();
-          element.find("span").text(link);
-        }, 5000);
-      }
-    </script>
   </body>
 </html>
