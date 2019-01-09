@@ -9,7 +9,9 @@ html, body {
   background-image: url('../images/landing-backgrounds.png');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
 }
 
 nav {
