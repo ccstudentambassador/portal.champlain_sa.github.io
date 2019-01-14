@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Ambassador Homepage</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.2.0/css/mdb.min.css" media="screen" title="no title">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="screen" title="no title">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="styles/styles.css" media="screen" title="no title">
+  </head>
+  <body>
+    <nav>
+      <!-- <img src="logo_color.png" alt="" /> -->
+      <a id="logo-wrapper" href="index.html">
+        <img src="images/full.png" alt="">
+        <span>Student Ambassadors</span>
+      </a>
+
+      <div class="pages">
+        <a href="index.html"><li>Home</li></a>
+        <a href="./pages/phonelist.html"><li>SA Phone List</li></a>
+      </div>
+    </nav>
+
+    <div class="wrapper">
+      <ul class="links">
+
+        <li href="https://docs.google.com/spreadsheets/d/1CUl356E7qgsiMNAjo39zqupBJMfZhi2SueE544uHEFc/edit?usp=sharing">
+          <div class="icon" id="schedule">
+            <i class="fa fa-th-list fa-4x" aria-hidden="true"></i>
+            <span>Schedule</span>
+          </div>
+        </li>
+        <li href="https://www.google.com/calendar/render?pli=1#h">
+          <div class="icon" id="calendar">
+            <i class="fa fa-calendar fa-4x" aria-hidden="true"></i>
+            <span>Calendar</span>
+          </div>
+        </li>
+        <li href="https://mail.google.com/mail/u/0/#inbox">
+          <div class="icon" id="gmail">
+            <i class="fa fa-envelope fa-4x" aria-hidden="true"></i>
+            <span>Gmail</span>
+          </div>
+        </li>
+        <li href="https://drive.google.com/drive/#my-drive">
+          <div class="icon" id="drive">
+            <img src="images/googledrive.ico" alt="">
+            <span>Google Drive</span>
+          </div>
+        </li>
+        <li href="https://www.champlain.edu/current-students">
+          <div class="icon-update" id="drive">
+            <img src="images/shield_white.png" alt=""> <br>
+            <span style="font-size: 18px;">Current Students</span>
+          </div>
+        </li>
+        <li href="https://my.champlain.edu/google/index/off/1/service/workday">
+          <div class="icon-update" id="workday">
+            <img src="images/workday.png" alt=""> <br>
+            <span>Workday</span>
+          </div>
+        <li href="pages/feedback.html">
+          <div class="icon-update" id="feedback">
+            <img src="images/feedback.png" alt=""> <br>
+            <span>Office Feedback</span>
+          </div>
+        </li>
+        <li href="https://champlainadmissions.slack.com/">
+          <div class="icon-update" id="Slack">
+            <img src="images/slack.png" alt=""> <br>
+            <span style="font-size: 20px;">Slack</span>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+    <footer>
+      <div id="champlain">
+        <img src="images/shield_color.png" alt=""/>
+        <span>LET US DARE</span>
+      </div>
+      <span id="footer-background"></span>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="./assets/timeago.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.2.0/js/mdb.min.js" charset="utf-8"></script>
+    <script src="./assets/tabletop.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      $( document ).ready(function() {
+        // Intialize Updates Board
+        init();
+
+        $("#secret").hide();
+
+        // Set up incognito clicks
+      });
+
+      var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1VPJsWRqeBW6t7xn3JphKra1LwrmyJpstcjhJz0tTyDk/pubhtml';
+
+      function init() {
+        Tabletop.init( { key: public_spreadsheet_url,
+                         callback: showInfo,
+                         simpleSheet: true } )
+      }
+
+      var monthNames = [
+        "January", "February", "March",
+        "April", "May", "June", "July",
+        "August", "September", "October",
+        "November", "December"
+      ];
+
+      function showInfo(data, tabletop) {
+        $(".news .items").empty();
+        if (data.length == 0){
+          $(".news .items").append("<h3> No updates at this time </h3>").css("overflow-y", "hidden");
+        } else {
+          $(".news .items").css("overflow-y", "auto");
+          var i;
+          var today = new Date();
+          data.reverse().forEach(function(update){
+            var date = new Date(update.Timestamp);
+            var timeDiff = Math.abs(today.getTime() - date.getTime());
+            var diffDays = Math.floor(timeDiff / (1000 * 3600 * 24)) + 1;
+            if (diffDays <= 14)
+            {
+              $(".news .items").append(
+                '<tr class="item"> <td class="date">' + monthNames[date.getMonth()] + ' ' + date.getDate() + ': <br> <span style="color: #969696; font-size: 15px;"> (' + $.timeago(date.getTime()) + ') </span> ' + '</td> <td class="message">' + update.Message + '</td> </tr>'
+              );
+            }
+          });
+        }
+        setTimeout(function(){
+          init();
+        }, 10000);
+      }
+
+      function isMobile(){
+        return ($(".news").css("display") == "none") ? true : false;
+      }
+
+      function incognitoShake(element){
+        var text = isMobile() ? "HOLD → Open In Incognito" : "RIGHT CLICK → Open In Incognito";
+        var size = isMobile() ? "30px" : "";
+        var link = element.find("span").text();
+        element.css("background-color", "#EE3124");
+        element.find("span").css("font-size", size);
+        element.addClass("animated shake");
+        element.find("i").hide();
+        element.find("img").hide();
+        element.find("#secret").show();
+        element.find("span").text(text);
+        setTimeout(function(){
+          element.css("background-color", "rgba(35,31,32,.9)");
+          element.find("span").css("font-size", "");
+          element.removeClass("animated shake");
+          element.find("i").show();
+          element.find("img").show();
+          element.find("#secret").hide();
+          element.find("span").text(link);
+        }, 5000);
+      }
+    </script>
+  </body>
+</html>

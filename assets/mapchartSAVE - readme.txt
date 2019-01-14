@@ -1,0 +1,1 @@
+To edit the counselor map, go to https://mapchart.net/usa-counties.html, then click "Upload Map Configuration", and copy-paste the data in the mapchartSAVE.txt file into the box. Then, make the changes, save the text file again, download the image, and upload to the site.
