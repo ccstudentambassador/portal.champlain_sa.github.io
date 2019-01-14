@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css?family=EB+Garamond');
 
 html, body {
+  display: flex;
+  flex-direction: column;
   font-family: 'Lato', sans-serif;
   margin: 0;
   padding: 0;
@@ -15,7 +17,6 @@ html, body {
 }
 
 nav {
-  position: relative;
   display: flex;
   align-items: center;
   max-width: 100%;
@@ -83,7 +84,6 @@ nav img {
 
 .wrapper {
   display: flex;
-  align-items: flex-start;
   padding-top: 15px;
   padding-left: 15px;
   padding-right: 15px;
@@ -121,7 +121,6 @@ nav img {
 .links {
   display: flex;
   flex-flow: row wrap;
-  justify-content: flex-start;
   text-align: center;
   margin: 0 auto;
 }
