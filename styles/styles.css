@@ -330,15 +330,13 @@ and (max-device-width : 480px) {
     }
 
     .icon {
-      width: 94vw;
       font-size: 30px;
-      text-align: left;
+      text-align: center;
     }
 
     .icon i {
       position: relative;
-      top: 2%;
-      margin-left: 22%;
+      padding-top: 20px;
     }
 
     .icon img {
@@ -354,7 +352,7 @@ and (max-device-width : 480px) {
       top: -20%;
       max-width: 400px;
       font-size: 45px;
-      margin-left: 45%;
+      padding-top: 80px;
     }
 
     #wings span, #drive span {
