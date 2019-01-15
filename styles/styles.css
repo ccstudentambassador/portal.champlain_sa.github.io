@@ -299,13 +299,6 @@ and (max-device-width : 480px) {
       width: 125%;
       height: 30px;
     
-    
-    nav img {
-      padding-top: none;
-      padding-bottom: none;
-      padding-left: 135px;
-    }
-    
     li {
       color:white;
       font-weight: 900;
