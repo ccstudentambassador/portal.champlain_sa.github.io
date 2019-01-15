@@ -350,6 +350,10 @@ and (max-device-width : 480px) {
       font-size: 30px;
       padding-top: 50px;
     }
+  
+    #wings span, #drive span {
+      top: -40%;
+    }
 
     footer {
       position: static;
