@@ -298,14 +298,11 @@ and (max-device-width : 480px) {
       display: flex;
       width: 125%;
       height: 30px;
-  
+    
     nav img {
-      width: auto;
-      height: 22px;
-      padding-right: 20px;
-      filter: brightness(0) invert(1);
-      background-color: transparent;
-      border-right: 1px solid #838383;
+      padding-top: none;
+      padding-bottom: none;
+      padding-left: 135px;
     }
     
     li {
