@@ -219,10 +219,6 @@ i {
   filter: brightness(0) invert(1);
 }
 
-.icon-update span {
-  font-size: 22px
-}
-
 .links a {
   margin: 15px;
 }
