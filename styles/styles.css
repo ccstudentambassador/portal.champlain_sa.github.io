@@ -292,10 +292,26 @@ and (max-device-width : 480px) {
       width: 100%;
       box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.25);
     }
-
-    .pages {
-      display: none;
+  
+    #logo-wrapper {
+      display: flex;
+      width: 125%;
+      height: 30px;
+  
+    nav img {
+      width: auto;
+      height: 22px;
+      filter: brightness(0) invert(1);
+      background-color: transparent;
+      border-right: 1px solid #838383;
     }
+    
+    li {
+      color:white;
+      font-weight: 900;
+      margin-left: 25px;
+      font-size: 16px;
+     }
 
     .news {
       display: none;
