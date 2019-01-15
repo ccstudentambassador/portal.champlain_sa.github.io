@@ -348,7 +348,7 @@ and (max-device-width : 480px) {
       top: -20%;
       max-width: 400px;
       font-size: 30px;
-      padding-top: 50px;
+      padding-top: 80px;
     }
   
     #wings span, #drive span {
