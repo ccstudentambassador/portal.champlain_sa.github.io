@@ -298,6 +298,11 @@ and (max-device-width : 480px) {
       display: flex;
       width: 125%;
       height: 30px;
+    }
+  
+    nav img {
+      padding-left: 135px;
+    }
     
     li {
       color:white;
