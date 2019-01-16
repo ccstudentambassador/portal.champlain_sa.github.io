@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Ambassador Portal</title>
+    <title>Student Ambassador Homepage</title>
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.2.0/css/mdb.min.css" media="screen" title="no title">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="screen" title="no title">
@@ -24,59 +24,74 @@
       </div>
     </nav>
 
-    <div class="wrapper">
-      <div class="links">
+      <ul class="links">
 
-        <a href="https://docs.google.com/spreadsheets/d/1CUl356E7qgsiMNAjo39zqupBJMfZhi2SueE544uHEFc/edit?usp=sharing">
-          <div class="icon" id="schedule">
-            <i class="fa fa-th-list fa-4x" aria-hidden="true"></i>
-            <span>Schedule</span>
-          </div>
-        </a>
-        <a href="https://www.google.com/calendar/render?pli=1#h">
-          <div class="icon" id="calendar">
-            <i class="fa fa-calendar fa-4x" aria-hidden="true"></i>
-            <span>Calendar</span>
-          </div>
-        </a>
-        <a href="https://mail.google.com/mail/u/0/#inbox">
-          <div class="icon" id="gmail">
-            <i class="fa fa-envelope fa-4x" aria-hidden="true"></i>
-            <span>Gmail</span>
-          </div>
-        </a>
-        <a href="https://drive.google.com/drive/#my-drive">
-          <div class="icon" id="drive">
-            <img src="images/googledrive.ico" alt="">
-            <span>Google Drive</span>
-          </div>
-        </a>
-        <a href="https://www.champlain.edu/current-students">
-          <div class="icon-update" id="drive">
-            <img src="images/shield_white.png" alt=""> <br>
-            <span style="font-size: 18px;">Current Students</span>
-          </div>
-        </a>
-        <a href="https://my.champlain.edu/google/index/off/1/service/workday">
-          <div class="icon-update" id="workday">
-            <img src="images/workday.png" alt=""> <br>
-            <span>Workday</span>
-          </div>
-        <a href="pages/feedback.html">
-          <div class="icon-update" id="feedback">
-            <img src="images/feedback.png" alt=""> <br>
-            <span>Office Feedback</span>
-          </div>
-        </a>
-        <a href="https://champlainadmissions.slack.com/">
-          <div class="icon-update" id="Slack">
-            <img src="images/slack.png" alt=""> <br>
-            <span style="font-size: 20px;">Slack</span>
-          </div>
-        </a>
-      </div>
-         
-    </div>
+        <li>
+          <a href="https://docs.google.com/spreadsheets/d/1CUl356E7qgsiMNAjo39zqupBJMfZhi2SueE544uHEFc/edit?usp=sharing">
+            <div class="icon" id="schedule">
+              <i class="fa fa-th-list fa-4x" aria-hidden="true"></i>
+              <span>Schedule</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.google.com/calendar/render?pli=1#h">
+            <div class="icon" id="calendar">
+              <i class="fa fa-calendar fa-4x" aria-hidden="true"></i>
+              <span>Calendar</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://mail.google.com/mail/u/0/#inbox">
+            <div class="icon" id="gmail">
+              <i class="fa fa-envelope fa-4x" aria-hidden="true"></i>
+              <span>Gmail</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://drive.google.com/drive/#my-drive">
+            <div class="icon" id="drive">
+              <img src="images/googledrive.ico" alt="">
+              <span>Google Drive</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.champlain.edu/current-students">
+            <div class="icon-update" id="drive">
+              <img src="images/shield_white.png" alt=""> <br>
+              <span style="font-size: 18px;">Current Students</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://my.champlain.edu/google/index/off/1/service/workday">
+            <div class="icon-update" id="workday">
+              <img src="images/workday.png" alt=""> <br>
+              <i id="secret" class="fa fa-user-secret fa-4x" aria-hidden="true" style="margin-top: -15px; margin-bottom: 10px;"></i>
+              <span>Workday</span>
+            </div>
+          </a>
+        <li>
+          <a href="pages/feedback.html">
+            <div class="icon-update" id="feedback">
+              <img src="images/feedback.png" alt=""> <br>
+              <span>Office Feedback</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://champlainadmissions.slack.com/">
+            <div class="icon-update" id="Slack">
+              <img src="images/slack.png" alt=""> <br>
+              <span>Slack</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+
     <footer>
       <div id="champlain">
         <img src="images/shield_color.png" alt=""/>
@@ -97,6 +112,14 @@
         $("#secret").hide();
 
         // Set up incognito clicks
+        $("#coverage").click(function(event) {
+          event.preventDefault();
+          incognitoShake($(this));
+        });
+        $("#workday").click(function(event) {
+          event.preventDefault();
+          incognitoShake($(this));
+        })
       });
 
       var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1VPJsWRqeBW6t7xn3JphKra1LwrmyJpstcjhJz0tTyDk/pubhtml';
