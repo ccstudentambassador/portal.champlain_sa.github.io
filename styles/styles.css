@@ -329,6 +329,7 @@ and (max-width: 600px) {
       position: static;
       background-color: #231f20;
       height: 100%;
+      width: 110vw;
     }
 
     #footer-background {
