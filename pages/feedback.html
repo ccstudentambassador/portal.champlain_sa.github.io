@@ -29,7 +29,6 @@
           <a href="https://goo.gl/forms/twE6ZhUQlfAdwTnY2">
             <div class="icon-update feedback">
               <img src="../images/shield_white.png" alt=""> <br>
-              <i id="secret" class="fa fa-user-secret fa-4x" aria-hidden="true" style="margin-top: -15px; margin-bottom: 10px;"></i>
               <span style="font-size: 20px;">Dylan</span>
             </div>
           </a>
@@ -38,7 +37,6 @@
           <a href="https://docs.google.com/forms/d/1hcKKZ-LYDHlKHeplOh69kZjZ_epPLPpFd-O9ylvqsHI/edit?usp=sharing">
             <div class="icon-update feedback">
               <img src="../images/shield_white.png" alt=""> <br>
-              <i id="secret" class="fa fa-user-secret fa-4x" aria-hidden="true" style="margin-top: -15px; margin-bottom: 10px;"></i>
               <span style="font-size: 20px;">Emma</span>
             </div>
           </a>
@@ -47,7 +45,6 @@
           <a href="https://goo.gl/forms/7BgyHmxAlZ2SeSyJ3">
             <div class="icon-update feedback">
               <img src="../images/shield_white.png" alt=""> <br>
-              <i id="secret" class="fa fa-user-secret fa-4x" aria-hidden="true" style="margin-top: -15px; margin-bottom: 10px;"></i>
               <span style="font-size: 20px;">Maddie</span>
             </div>
           </a>
@@ -56,7 +53,6 @@
           <a href="https://docs.google.com/forms/d/1m35-tMlDk9mJ9lOhys30InV-hvbcQ6M5fDUTI9qPEs0/edit?usp=sharing">
             <div class="icon-update feedback">
               <img src="../images/shield_white.png" alt=""> <br>
-              <i id="secret" class="fa fa-user-secret fa-4x" aria-hidden="true" style="margin-top: -15px; margin-bottom: 10px;"></i>
               <span style="font-size: 20px;">Michael-Paul</span>
             </div>
           </a>
@@ -75,42 +71,5 @@
     <script src="./assets/timeago.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.2.0/js/mdb.min.js" charset="utf-8"></script>
     <script src="./assets/tabletop.js" charset="utf-8"></script>
-    <script type="text/javascript">
-      $("#secret").hide();
-
-      // Set up incognito clicks
-
-      $(".feedback").click(function(event) {
-        event.preventDefault();
-        incognitoShake($(this));
-      })
-
-      function isMobile(){
-        return (window.innerWidth < 600);
-      }
-
-      function incognitoShake(element){
-        var text = isMobile() ? "HOLD → Open In Incognito" : "RIGHT CLICK → Open In Incognito";
-        var size = isMobile() ? "25px" : "";
-        var link = element.find("span").text();
-        element.css("background-color", "#EE3124");
-        element.find("span").css("font-size", size);
-        element.addClass("animated shake");
-        element.find("i").hide();
-        element.find("img").hide();
-        element.find("#secret").show();
-        element.find("span").text(text);
-        setTimeout(function(){
-          element.css("background-color", "rgba(35,31,32,.9)");
-          element.find("span").css("font-size", "");
-          element.removeClass("animated shake");
-          element.find("i").show();
-          element.find("img").show();
-          element.find("#secret").hide();
-          element.find("span").text(link);
-        }, 5000);
-      }
-
-    </script>
   </body>
 </html>
